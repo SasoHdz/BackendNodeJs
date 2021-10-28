@@ -1,7 +1,7 @@
 const faker = require('faker');
-const { boom } = require('@hapi/boom');
+const boom  = require('@hapi/boom');
 
-class ProductsSerivce {
+class ProductsService {
 
   constructor() {
     this.products = [];
@@ -47,7 +47,7 @@ class ProductsSerivce {
     //const name = this.getTotal();
     const product = this.products.find(item => item.id === id);
     if(!product) {
-      throw boom.notFound('Product not found');
+      throw boom.notFound('product not found');
     }
     if (product.isBlock) {
       throw boom.conflict('Product is block');
@@ -80,4 +80,4 @@ class ProductsSerivce {
   }
 }
 
-module.exports = ProductsSerivce;
+module.exports = ProductsService;

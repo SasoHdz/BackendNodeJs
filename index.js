@@ -18,9 +18,12 @@ app.get('/nueva-ruta', (req, res) => {
 
 routerApi(app);
 
+//Los midlewares de error siempre van despues del routerApi
 app.use(logErrors);
 app.use(boomErrorHandler);
 app.use(errorHandler);
+
+//Cuida mucho el orden en que pones lo midlewares
 
 app.listen(port, () => {
   console.log('Mi port' + port);
