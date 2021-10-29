@@ -1,6 +1,10 @@
 const express = require('express');
 
+const UsersService = require('../services/users.service');
+
+
 const router = express.Router();
+const service = new UsersService();
 
 router.get('/', (req, res) => {
   const { limit, offset } = req.query;
@@ -14,6 +18,17 @@ router.get('/', (req, res) => {
     res.send('No hay parametros');
   }
 
-})
+});
+
+router.get('/:id', async (req, res, next) => {
+    try {
+      const { id } = req.params;
+      const user = await service.findOne(id);
+      res.json(user);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
 
 module.exports = router;
