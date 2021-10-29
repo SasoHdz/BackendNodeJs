@@ -19,7 +19,7 @@ class UsersService {
         lastName: faker.name.lastName(),
         userName: faker.internet.userName(),
         email: faker.internet.email(),
-        number: fake.phone.phoneNumber(),
+        numberPhone: faker.phone.phoneNumber(),
         avatar: faker.internet.avatar(),
         country: faker.address.country(),
         address: faker.address.address(),
