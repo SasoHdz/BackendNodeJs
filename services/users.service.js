@@ -22,7 +22,7 @@ class UsersService {
         numberPhone: faker.phone.phoneNumber(),
         avatar: faker.internet.avatar(),
         country: faker.address.country(),
-        address: faker.address.address(),
+        address: faker.address.direction(),
         isPremiun: faker.datatype.boolean(),
       });
     }
